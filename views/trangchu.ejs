@@ -136,72 +136,47 @@
             </div>
         </div>
     </div>
-<!-- END SLIDE -->
+
 
 <!-- Danh sach su kien -->
-    <div class="container-fluid pt-5 text-center" style="background-color:#FFF5EE">
-        <div class="container">
-            <div class="section-title">
-                <h4 class="text-primary text-uppercase display-7 fw-bold" style="letter-spacing: 5px;">Danh Sách Sự Kiện Tại Đà Nẵng</h4>
-          
-            </div>
-            <div class="row ">
-                <div class="col-lg-6 mb-5 ">
-                    <div class="row align-items-center ">
-                        <div class="col-sm-5 " >
-                            <img class="img-fluid mb-3 mb-sm-0" src="https://danangfantasticity.com/wp-content/uploads/2025/07/ngam-phao-hoa-ruc-ro-cung-bo-doi-vungocson.jpg" alt="">
+<div class="container-fluid pt-5 text-center" style="background-color:#FFF5EE">
+    <div class="container">
+        <div class="section-title">
+            <h4 class="text-primary text-uppercase display-7 fw-bold" style="letter-spacing: 5px;">
+                Danh Sách Sự Kiện Tại Đà Nẵng
+            </h4>
+        </div>
+
+        <div class="row">
+            <% events.forEach(event=> { %>
+                <div class="col-lg-6 mb-5">
+                    <div class="row align-items-center">
+                        <div class="col-sm-5">
+                            <a href="">
+                                <img class="img-fluid mb-3 mb-sm-0" src="<%= event.cover_image %>" alt="<%= event.name %>">
+                            </a>
                         </div>
                         <div class="col-sm-7 ps-4">
-                            <h4><i class="fa fa-truck service-icon me-3 "></i>Sự kiện Pháo Hoa</h4>
-                            <p class="m-0">Sit lorem ipsum et diam elitr est dolor sed duo. Guberg sea et et lorem dolor
-                                sed est sit
-                                invidunt, dolore tempor diam ipsum takima erat tempor</p>
+                            <h4>
+                                <i class="fa fa-calendar service-icon me-3"></i>
+                                <%= event.name %>
+                            </h4>
+                            <p class="m-0">
+                                <%= event.description %>
+                            </p>
+                            <p class="text-muted small mt-2">
+                                📍 <%= event.location %><br>
+                                    🕒 <%= event.start_time.toLocaleDateString("vi-VN") %> -
+                                        <%= event.end_time.toLocaleDateString("vi-VN") %>
+                            </p>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-6 mb-5">
-                    <div class="row align-items-center">
-                        <div class="col-sm-5">
-                            <img class="img-fluid mb-3 mb-sm-0" src="https://danangfantasticity.com/wp-content/uploads/2025/07/VnExpress-Marathon-da-nang-2025-su-kien-da-nang-2025.jpg" alt="">
-                        </div>
-                        <div class="col-sm-7">
-                            <h4><i class="fa fa-coffee service-icon me-3"></i>VNEXPRESS MARATHON ĐÀ NẴNG </h4>
-                            <p class="m-0">Sit lorem ipsum et diam elitr est dolor sed duo. Guberg sea et et lorem dolor
-                                sed est sit
-                                invidunt, dolore tempor diam ipsum takima erat tempor</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 mb-5">
-                    <div class="row align-items-center">
-                        <div class="col-sm-5">
-                            <img class="img-fluid mb-3 mb-sm-0" src="https://danangfantasticity.com/wp-content/uploads/2025/07/nippon-oi-le-hoi-cosplay-anime-mang-lon-nhat-tai-viet-nam-da-nang.jpg" alt="">
-                        </div>
-                        <div class="col-sm-7">
-                            <h4><i class="fa fa-award service-icon me-3"></i>Lễ hội cosplay, anime, manga</h4>
-                            <p class="m-0">Sit lorem ipsum et diam elitr est dolor sed duo. Guberg sea et et lorem dolor
-                                sed est sit
-                                invidunt, dolore tempor diam ipsum takima erat tempor</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 mb-5">
-                    <div class="row align-items-center">
-                        <div class="col-sm-5">
-                            <img class="img-fluid mb-3 mb-sm-0" src="https://danangfantasticity.com/wp-content/uploads/2025/07/le-hoi-am-thuc-han-quoc-tai-hoi-nam-2025-01.jpg" alt="">
-                        </div>
-                        <div class="col-sm-7">
-                            <h4><i class="fa fa-table service-icon me-3"></i>Lễ hội ẩm thực tại hội an</h4>
-                            <p class="m-0">Sit lorem ipsum et diam elitr est dolor sed duo. Guberg sea et et lorem dolor
-                                sed est sit
-                                invidunt, dolore tempor diam ipsum takima erat tempor</p>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
+                <% }) %>
         </div>
     </div>
+</div>
+
 <!-- END Danh sach su kien -->
 
     <!-- <footer></footer> -->
