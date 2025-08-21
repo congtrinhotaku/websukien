@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+</head>
+
+<body class="bg-light">
+    <div class="container my-5">
+        <h2 class="mb-4">Tạo sự kiện</h2>
+        <form action="/users/createEvent" method="POST" enctype="multipart/form-data" class="needs-validation"
+            novalidate>
+
+            <!-- Upload hình ảnh -->
+            <div class="mb-3">
+                <label class="form-label fw-bold">Upload hình ảnh</label>
+                <input type="file" class="form-control mb-2" name="cover_image">
+                <input type="file" class="form-control" name="banner_image">
+            </div>
+
+            <!-- Tên sự kiện -->
+            <div class="mb-3">
+                <label class="form-label fw-bold">Tên sự kiện</label>
+                <input type="text" class="form-control" name="name" maxlength="100" required>
+            </div>
+
+            <!-- Loại sự kiện -->
+            <div class="mb-3">
+                <label class="form-label fw-bold">Thể loại sự kiện</label>
+                <select class="form-select" name="category" required>
+                    <option value="">-- Chọn thể loại --</option>
+                    <option value="music">Âm nhạc</option>
+                    <option value="workshop">Workshop</option>
+                    <option value="conference">Hội thảo</option>
+                    <option value="other">Khác</option>
+                </select>
+            </div>
+
+            <!-- Địa chỉ -->
+            <div class="mb-3">
+                <label class="form-label fw-bold">Địa chỉ sự kiện</label>
+                <input type="text" class="form-control" name="location" maxlength="200"
+                    placeholder="Nhập địa chỉ sự kiện" required>
+            </div>
+
+            <!-- Thời gian -->
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label class="form-label fw-bold">Thời gian bắt đầu</label>
+                    <input type="datetime-local" class="form-control" name="start_time" required>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label class="form-label fw-bold">Thời gian kết thúc</label>
+                    <input type="datetime-local" class="form-control" name="end_time" required>
+                </div>
+            </div>
+
+            <!-- Mô tả -->
+            <div class="mb-3">
+                <label class="form-label fw-bold">Thông tin sự kiện</label>
+                <textarea class="form-control" name="description" rows="5"
+                    placeholder="Mô tả chi tiết về sự kiện"></textarea>
+            </div>
+
+            <!-- Submit -->
+            <button type="submit" class="btn btn-primary">Lưu sự kiện</button>
+        </form>
+    </div>
+</body>
+
+</html>

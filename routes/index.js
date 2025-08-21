@@ -9,6 +9,7 @@ router.get('/', function(req, res, next) {
   res.render('trangchu', { });
 });
 
+
 router.get("/register", userController.loadSignup);
 router.post("/register", userController.signup);
 router.get("/login", userController.loadLogin);
