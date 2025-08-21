@@ -34,6 +34,11 @@ const EventSchema = new mongoose.Schema({
     banner_image: {
         type: String,
         default: ""
+    },
+    id_user: {
+        type: mongoose.Schema.Types.ObjectId,   
+        ref: "User",                            
+        required: true
     }
 }, {
     timestamps: { createdAt: "created_at", updatedAt: "updated_at" },

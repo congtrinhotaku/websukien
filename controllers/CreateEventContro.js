@@ -1,15 +1,23 @@
 const Event = require("../models/Event");
 
 exports.loadCreateEvent = (req, res) => {
+    console.log("Session user:", req.session.user);
     res.render("TaoSuKien");
 };
 
 exports.createEvent = async (req, res) => {
     try {
+        const user = req.session.user;
+        if (!user) {
+            return res.status(401).send("Bạn cần đăng nhập để tạo sự kiện");
+        }
+
         const { name, description, category, start_time, end_time, location } = req.body;
 
         console.log("Dữ liệu form:", req.body);
         console.log("File upload:", req.files);
+
+    
 
         // Lấy đường dẫn ảnh
         const coverImagePath = req.files["cover_image"]
@@ -28,7 +36,8 @@ exports.createEvent = async (req, res) => {
             end_time,
             location,
             cover_image: coverImagePath,
-            banner_image: bannerImagePath
+            banner_image: bannerImagePath,
+            id_user: user.id
         });
 
         await newEvent.save();
