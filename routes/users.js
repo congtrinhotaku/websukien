@@ -9,8 +9,13 @@ const upload = require("../helpers/multer");
 router.get('/', function(req, res, next) {
   res.send('respond with a resource');
 });
+
+
+
 router.get('/createEvent', eventController.loadCreateEvent);
 // Dùng upload.fields để nhận nhiều file
+
+
 router.post(
   "/createEvent",
   upload.fields([
@@ -20,7 +25,19 @@ router.post(
   eventController.createEvent
 );
 
+router.get('/events', eventController.crudSuKien);
 
+router.get("/events/edit/:id", eventController.loadEditEvent);
+router.post("/events/edit/:id", eventController.editEvent);
+
+// Xóa sự kiện
+router.post("/events/delete/:id", eventController.deleteEvent);
+
+// Hiển thị form đăng ký
+router.get("/event/invite/:id", eventController.loadInviteForm);
+
+// Xử lý đăng ký
+router.post("/event/invite/:id", eventController.submitInviteForm);
 
 
 

@@ -11,7 +11,7 @@ const isUser = require("./middlewares/userAuth")
 // Router
 const indexRouter = require("./routes/index")
 const usersRouter = require("./routes/users")
-
+const adminRouter = require("./routes/admin")
 // Kết nối DB
 db()
 
@@ -49,6 +49,7 @@ app.use("/uploads", express.static(path.join(__dirname, "uploads")))
 // Routes
 app.use("/", indexRouter)
 app.use("/users",isUser, usersRouter)
+app.use("/admin", adminRouter)
 
 // Error handler
 app.use((err, req, res, next) => {

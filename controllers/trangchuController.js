@@ -4,7 +4,7 @@ const getHomePage = async (req, res) => {
     try {
         // Lấy tất cả sự kiện từ DB (dùng lean() để render EJS dễ hơn)
         const events = await Event.find().sort({ createdAt: -1 }).lean();
-
+        console.log(req.session.user);
         res.render("trangchu", {
             title: "Trang chủ",
             events: events || [],
