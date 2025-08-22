@@ -6,6 +6,8 @@ const session = require("express-session")
 const methodOverride = require("method-override")
 const db = require("./config/db")
 const morgan = require("morgan")
+const isUser = require("./middlewares/userAuth")
+
 // Router
 const indexRouter = require("./routes/index")
 const usersRouter = require("./routes/users")
@@ -46,7 +48,7 @@ app.use("/uploads", express.static(path.join(__dirname, "uploads")))
 
 // Routes
 app.use("/", indexRouter)
-app.use("/users", usersRouter)
+app.use("/users",isUser, usersRouter)
 
 // Error handler
 app.use((err, req, res, next) => {

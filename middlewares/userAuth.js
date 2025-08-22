@@ -1,4 +1,4 @@
-const NguoiDung = require("../models/NguoiDung");
+const NguoiDung = require("../models/Users");
 
 module.exports = async function (req, res, next) {
   try {
