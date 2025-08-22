@@ -51,18 +51,27 @@ exports.createEvent = async (req, res) => {
     }
 };
 
+
 exports.crudSuKien = async (req, res) => {
     try {
         const userId = req.session.user.id;
-        const events = await Event.find({ id_user: userId }).sort({ start_time: -1 }); 
-        res.render("crudsukien", { events });
+        const events = await Event.find({ id_user: userId }).sort({ start_time: -1 });
+
+        // Lấy số người tham gia cho từng sự kiện
+        const eventsWithCount = await Promise.all(events.map(async (event) => {
+            const count = await EventRegistration.countDocuments({ event_id: event._id });
+            return {
+                ...event.toObject(),
+                participantCount: count
+            };
+        }));
+
+        res.render("crudsukien", { events: eventsWithCount });
     } catch (error) {
         console.error("Lỗi khi lấy sự kiện:", error);
         res.status(500).send("Lỗi server");
     }
 };
-
-
 // Hiển thị form edit
 exports.loadEditEvent = async (req, res) => {
     try {
@@ -179,4 +188,23 @@ exports.submitInviteForm = async (req, res) => {
         res.status(500).send("Đăng ký thất bại, vui lòng thử lại");
     }
 };
+// Hiển thị danh sách người tham gia sự kiện
+exports.listThamGia = async (req, res) => {
+    try {
+        const eventId = req.params.id;
 
+        // Lấy thông tin event
+        const event = await Event.findById(eventId);
+        if(!event){
+            return res.status(404).send("Sự kiện không tồn tại");
+        }
+
+        // Lấy danh sách người tham gia
+        const participants = await EventRegistration.find({ event_id: eventId }).sort({ registration_time: -1 });
+
+        res.render("listthamgia", { event, participants });
+    } catch (error) {
+        console.error(error);
+        res.status(500).send("Lỗi server");
+    }
+};

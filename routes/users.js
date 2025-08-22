@@ -33,12 +33,9 @@ router.post("/events/edit/:id", eventController.editEvent);
 // Xóa sự kiện
 router.post("/events/delete/:id", eventController.deleteEvent);
 
-// Hiển thị form đăng ký
-router.get("/event/invite/:id", eventController.loadInviteForm);
 
-// Xử lý đăng ký
-router.post("/event/invite/:id", eventController.submitInviteForm);
-
+// Xem danh sách người tham gia
+router.get("/event/invite/:id", eventController.listThamGia);
 
 
 module.exports = router;
