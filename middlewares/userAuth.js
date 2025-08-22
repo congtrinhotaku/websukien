@@ -1,4 +1,4 @@
-const NguoiDung = require("../models/NguoiDung");
+const NguoiDung = require("../models/Users");
 
 module.exports = async function (req, res, next) {
   try {
@@ -7,9 +7,7 @@ module.exports = async function (req, res, next) {
 
       if (!user) return res.redirect("/login");
 
-      if (user.Trang_Thai_Nguoi_Dung !== 'active') {
-        return res.redirect("/blocked");
-      }
+      
 
 
       req.user = user;

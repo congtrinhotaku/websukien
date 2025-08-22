@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title><%= title %></title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="d-flex">
+        <!-- Sidebar -->
+        <div class="bg-light border-end p-3" style="width: 220px; min-height: 100vh;">
+            <h4>Menu</h4>
+            <ul class="nav flex-column">
+                <li class="nav-item mb-2"><a class="nav-link" href="/events">Danh sách sự kiện</a></li>
+                <li class="nav-item mb-2"><a class="nav-link" href="/events/create">Tạo sự kiện</a></li>
+                <!-- Sau này thêm CRUD khác -->
+            </ul>
+        </div>
+
+        <!-- Main Content -->
+        <div class="flex-grow-1 p-4">
+            <h2 class="mb-4">Sửa sự kiện</h2>
+            <form action="/users/events/edit/<%= event._id %>" method="POST" class="row g-3">
+                <div class="col-12">
+                    <label class="form-label">Tên sự kiện:</label>
+                    <input type="text" class="form-control" name="name" value="<%= event.name %>" required maxlength="150">
+                </div>
+
+                <div class="col-12">
+                    <label class="form-label">Mô tả:</label>
+                    <textarea class="form-control" name="description" rows="3"><%= event.description %></textarea>
+                </div>
+
+                <div class="col-md-6">
+                    <label class="form-label">Thể loại:</label>
+                    <input type="text" class="form-control" name="category" value="<%= event.category %>">
+                </div>
+
+                <div class="col-md-6">
+                    <label class="form-label">Địa điểm:</label>
+                    <input type="text" class="form-control" name="location" value="<%= event.location %>" required maxlength="255">
+                </div>
+
+                <div class="col-md-6">
+                    <label class="form-label">Thời gian bắt đầu:</label>
+                    <input type="datetime-local" class="form-control" name="start_time" value="<%= new Date(event.start_time).toISOString().slice(0,16) %>" required>
+                </div>
+
+                <div class="col-md-6">
+                    <label class="form-label">Thời gian kết thúc:</label>
+                    <input type="datetime-local" class="form-control" name="end_time" value="<%= new Date(event.end_time).toISOString().slice(0,16) %>" required>
+                </div>
+
+                <div class="col-md-6">
+                    <label class="form-label">Ảnh bìa (URL):</label>
+                    <input type="text" class="form-control" name="cover_image" value="<%= event.cover_image %>">
+                </div>
+
+                <div class="col-md-6">
+                    <label class="form-label">Banner (URL):</label>
+                    <input type="text" class="form-control" name="banner_image" value="<%= event.banner_image %>">
+                </div>
+
+                <div class="col-12">
+                    <button type="submit" class="btn btn-primary">Cập nhật</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

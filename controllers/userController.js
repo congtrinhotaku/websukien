@@ -73,8 +73,9 @@ const login = async (req, res) => {
       id: user._id,
       name: user.name,
     };
+    req.session.loginSession = true;
 
-    res.redirect("/");
+    res.redirect("/users/events");
   } catch (error) {
     console.error(error);
     res.status(500).render("errorPage", {

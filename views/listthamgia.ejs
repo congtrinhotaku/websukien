@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Người tham gia - <%= event.name %></title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="container my-5">
+    <h2 class="mb-4">Danh sách người tham gia: <%= event.name %></h2>
+
+ 
+    <!-- Thông tin chi tiết sự kiện -->
+    <div class="card mb-4 p-3">
+        <div class="row g-3 align-items-center">
+            <!-- Cột ảnh banner -->
+            <div class="col-md-4">
+                <% if(event.banner_image){ %>
+                    <img src="<%= event.banner_image %>" class="img-fluid rounded" alt="Banner sự kiện">
+                <% } else { %>
+                    <div class="bg-secondary text-white d-flex align-items-center justify-content-center" style="height:150px;">
+                        Chưa có banner
+                    </div>
+                <% } %>
+            </div>
+
+            <!-- Cột thông tin sự kiện -->
+            <div class="col-md-8">
+                <p><strong>Tên sự kiện:</strong> <%= event.name %></p>
+                <p><strong>Mô tả:</strong> <%= event.description || "Chưa có mô tả" %></p>
+                <p><strong>Thời gian:</strong> 
+                    <%= new Date(event.start_time).toLocaleString() %> - 
+                    <%= new Date(event.end_time).toLocaleString() %>
+                </p>
+                <p><strong>Địa điểm:</strong> <%= event.location %></p>
+                <p><strong>Danh mục:</strong> <%= event.category %></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bảng người tham gia -->
+    <% if(participants.length === 0){ %>
+        <div class="alert alert-info">Chưa có người tham gia nào.</div>
+    <% } else { %>
+        <table class="table table-bordered table-striped">
+            <thead class="table-dark">
+                <tr>
+                    <th>#</th>
+                    <th>Họ và tên</th>
+                    <th>Email</th>
+                    <th>Số điện thoại</th>
+                    <th>Thời gian đăng ký</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% participants.forEach((p, index) => { %>
+                    <tr>
+                        <td><%= index + 1 %></td>
+                        <td><%= p.name %></td>
+                        <td><%= p.email %></td>
+                        <td><%= p.phone %></td>
+                        <td><%= new Date(p.registration_time).toLocaleString() %></td>
+                    </tr>
+                <% }) %>
+            </tbody>
+        </table>
+    <% } %>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
