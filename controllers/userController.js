@@ -75,7 +75,7 @@ const login = async (req, res) => {
     };
     req.session.loginSession = true;
 
-    res.redirect("/users/events");
+    res.redirect("/");
   } catch (error) {
     console.error(error);
     res.status(500).render("errorPage", {

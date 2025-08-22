@@ -30,232 +30,212 @@
 <body>
     <!-- NAV -->
 
-<div class="container-fluid p-0 nav-bar" id="navbar">
-    <nav class="navbar navbar-expand-lg navbar-dark py-3 px-4">
-        <!-- Logo -->
-        <a href="index.html" class="navbar-brand">
-            <img src="https://danangfantasticity.com/wp-content/uploads/dfc/public/main-logo.png" alt="" style="height:50px;">
-        </a>
+    <%- include("partials/header") %>
 
-        <!-- Toggle button -->
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+        <!-- end nav -->
 
-        <!-- Nội dung Navbar -->
-        <div class="collapse navbar-collapse justify-content-between" id="navbarSupportedContent">
-            <!-- Menu giữa -->
-            <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
-                <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
-                <li class="nav-item"><a class="nav-link" href="menu.html">Menu</a></li>
-                <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-                <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link " href="#" role="button" data-bs-toggle="dropdown">Pages</a>
- 
-                </li>
-            </ul>
+        <!-- SLIDE -->
+        <div class="container-fluid p-0 mb-0 ">
+            <div id="blog-carousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
 
-            <!-- Nút Đăng Nhập / Đăng Ký -->
-            <div class="d-flex">
-                <a href="/login" class="btn btn-outline-light me-2">Đăng Nhập</a>
-                <a href="/register" class="btn btn-warning text-white">Đăng Ký</a>
-            </div>
-        </div>
-    </nav>
-</div>
+                    <!-- Slide 1 -->
+                    <div class="carousel-item active position-relative">
+                        <img src="https://danangfantasticity.com/wp-content/uploads/2025/03/2-cau-song-han-quay-23h00-thu-bay-va-chu-nhat-hang-tuan-01.jpg"
+                            class="d-block w-100" alt="Ảnh 1">
+                        <!-- Overlay làm mờ ảnh -->
+                        <div class="carousel-overlay position-absolute top-0 start-0 w-100 h-100"></div>
 
-    <!-- end nav -->
-     
-<!-- SLIDE -->
-    <div class="container-fluid p-0 mb-0 ">
-        <div id="blog-carousel" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner">
-
-                <!-- Slide 1 -->
-                <div class="carousel-item active position-relative">
-                    <img src="https://danangfantasticity.com/wp-content/uploads/2025/03/2-cau-song-han-quay-23h00-thu-bay-va-chu-nhat-hang-tuan-01.jpg" class="d-block w-100" alt="Ảnh 1">
-                    <!-- Overlay làm mờ ảnh -->
-                    <div class="carousel-overlay position-absolute top-0 start-0 w-100 h-100"></div>
-
-                    <!-- Caption giữa ảnh -->
-                <div class="carousel-caption d-flex flex-column justify-content-center align-items-center h-100">
-                    <h2 class="text-warning fw-medium m-0 fs-1">Welcome to Đà Nẵng</h2>
-                    <h1 class="text-white fw-bold m-0 display-1">Lễ hội Pháo Hoa</h1>
-                    <h2 class="text-white m-0 fs-2">2025</h2>
-                </div>
-                </div>
-
-                <!-- Slide 2 -->
-                <div class="carousel-item position-relative">
-                    <img src="https://danangfantasticity.com/wp-content/uploads/2025/03/1-cau-rong-phun-lua-va-nuoc-vao-moi-thu-6-7-cn-hang-tuan-tai-da-nang.jpg" class="d-block w-100" alt="Ảnh 2">
-                    <div class="carousel-overlay position-absolute top-0 start-0 w-100 h-100"></div>
-                <div class="carousel-caption d-flex flex-column justify-content-center align-items-center h-100">
-                    <h2 class="text-warning fw-medium m-0 fs-1">Welcome to Đà Nẵng</h2>
-                    <h1 class="text-white fw-bold m-0 display-1">Lễ hội Pháo Hoa</h1>
-                    <h2 class="text-white m-0 fs-2">2025</h2>
-                </div>
-                </div>
-              
-            </div>
-
-            <!-- Controls -->
-            <button class="carousel-control-prev" type="button" data-bs-target="#blog-carousel" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon"></span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#blog-carousel" data-bs-slide="next">
-                <span class="carousel-control-next-icon"></span>
-            </button>
-        </div>
-    </div>
-
-
-    <div class="container-fluid" style="background-color:#FFF5EE">
-        <div class="container">
-            <div class="section-title text-center mb-5">
-                <h4 class="text-primary text-uppercase" style="letter-spacing: 5px;">Welcome to Đà Nẵng</h4>
-                <h1 class="display-4">Giới Thiệu Sự Kiện</h1>
-            </div>
-            <div class="row">
-                <div class="col-lg-4 py-0 py-lg-5">
-                    <h1 class="mb-3">Lễ hội Văn hóa Nghệ thuật</h1>
-                    <p class="fs-5">Đà Nẵng thường xuyên tổ chức các lễ hội văn hóa, triển lãm nghệ thuật và chương trình biểu diễn âm nhạc, mang đến không
-                    gian sôi động, gắn kết cộng đồng và du khách.</p>
-                    <a href="" class="btn btn-secondary font-weight-bold py-2 px-4 mt-2">Tìm hiểu thêm</a>
-                </div>
-                <div class="col-lg-4 py-5 py-lg-0" style="min-height: 500px;">
-                    <div class="position-relative h-100">
-                    </div>
-                </div>
-                <div class="col-lg-4 py-0 py-lg-5">
-                    <h1 class="mb-3">Sự kiện Du lịch & Thể thao</h1>
-                    <p class="fs-5">Thành phố còn nổi bật với các sự kiện du lịch, hội chợ, giải chạy marathon quốc tế và những hoạt động thể thao biển, góp
-                    phần quảng bá hình ảnh Đà Nẵng năng động và hiện đại.</p>
-                    <a href="" class="btn btn-warning font-weight-bold py-2 px-4 mt-2">Tìm hiểu thêm</a>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-<!-- Danh sach su kien -->
-<div class="container-fluid  text-center" style="background-color:#FFF5EE">
-    <div class="container">
-        <div class="section-title">
-            <h4 class="text-primary text-uppercase display-7 fw-bold pt-1" style="letter-spacing: 5px;">
-                Danh Sách Sự Kiện Tại Đà Nẵng
-            </h4>
-        </div>
-
-<div class="row g-4" id="eventsContainer">
-    <% events.forEach((event, index)=> { %>
-        <div class="col-lg-6 event-item <%= index >= 4 ? 'd-none' : '' %>">
-            <div class="card h-100 shadow-sm border-0">
-                <div class="row g-0 h-100">
-                    <!-- Hình ảnh -->
-                    <div class="col-sm-5">
-                        <img src="<%= event.cover_image %>" class="img-fluid rounded-start w-100"
-                            alt="<%= event.name %>" style="height:200px; object-fit:cover;">
+                        <!-- Caption giữa ảnh -->
+                        <div
+                            class="carousel-caption d-flex flex-column justify-content-center align-items-center h-100">
+                            <h2 class="text-warning fw-medium m-0 fs-1">Welcome to Đà Nẵng</h2>
+                            <h1 class="text-white fw-bold m-0 display-1">Lễ hội Pháo Hoa</h1>
+                            <h2 class="text-white m-0 fs-2">2025</h2>
+                        </div>
                     </div>
 
-                    <!-- Nội dung -->
-                    <div class="col-sm-7 d-flex flex-column">
-                        <div class="card-body d-flex flex-column h-100">
-                            <!-- Tên sự kiện -->
-                            <h5 class="card-title mb-2 fw-bold">
-                                <i class="fa fa-calendar me-2 text-primary"></i>
-                                <%= event.name %>
-                            </h5>
+                    <!-- Slide 2 -->
+                    <div class="carousel-item position-relative">
+                        <img src="https://danangfantasticity.com/wp-content/uploads/2025/03/1-cau-rong-phun-lua-va-nuoc-vao-moi-thu-6-7-cn-hang-tuan-tai-da-nang.jpg"
+                            class="d-block w-100" alt="Ảnh 2">
+                        <div class="carousel-overlay position-absolute top-0 start-0 w-100 h-100"></div>
+                        <div
+                            class="carousel-caption d-flex flex-column justify-content-center align-items-center h-100">
+                            <h2 class="text-warning fw-medium m-0 fs-1">Welcome to Đà Nẵng</h2>
+                            <h1 class="text-white fw-bold m-0 display-1">Lễ hội Pháo Hoa</h1>
+                            <h2 class="text-white m-0 fs-2">2025</h2>
+                        </div>
+                    </div>
 
-                            <!-- Thông tin chi tiết -->
-                            <p class="text-muted small mb-2 ">
-                                <span class="d-block text-danger fs-4">📍 <%= event.location %></span>
-                                <span class="d-block fs-6  fw-bold">🕒 <%= event.start_time.toLocaleDateString("vi-VN") %> - <%=
-                                            event.end_time.toLocaleDateString("vi-VN") %></span>
-                            </p>
+                </div>
 
-                            <!-- Mô tả ngắn -->
-                            <p class="card-text flex-grow-1 text-truncate"
-                                style="display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; overflow:hidden;">
-                                <%= event.description %>
-                            </p>
+                <!-- Controls -->
+                <button class="carousel-control-prev" type="button" data-bs-target="#blog-carousel"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#blog-carousel"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                </button>
+            </div>
+        </div>
 
-                            <!-- Nút tham gia -->
-                            <div class="mt-auto">
-                                <a href="/event/invite/<%= event._id %>"
-                                    class="btn btn-info w-100 fw-semibold text-white">
-                                    Xem chi tiết
-                                </a>
+
+        <div class="container-fluid" style="background-color:#FFF5EE">
+            <div class="container">
+                <div class="section-title text-center mb-5">
+                    <h4 class="text-primary text-uppercase" style="letter-spacing: 5px;">Welcome to Đà Nẵng</h4>
+                    <h1 class="display-4">Giới Thiệu Sự Kiện</h1>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4 py-0 py-lg-5">
+                        <h1 class="mb-3">Lễ hội Văn hóa Nghệ thuật</h1>
+                        <p class="fs-5">Đà Nẵng thường xuyên tổ chức các lễ hội văn hóa, triển lãm nghệ thuật và chương
+                            trình biểu diễn âm nhạc, mang đến không
+                            gian sôi động, gắn kết cộng đồng và du khách.</p>
+                        <a href="" class="btn btn-secondary font-weight-bold py-2 px-4 mt-2">Tìm hiểu thêm</a>
+                    </div>
+                    <div class="col-lg-4 py-5 py-lg-0" style="min-height: 500px;">
+                        <div class="position-relative h-100">
+                        </div>
+                    </div>
+                    <div class="col-lg-4 py-0 py-lg-5">
+                        <h1 class="mb-3">Sự kiện Du lịch & Thể thao</h1>
+                        <p class="fs-5">Thành phố còn nổi bật với các sự kiện du lịch, hội chợ, giải chạy marathon quốc
+                            tế và những hoạt động thể thao biển, góp
+                            phần quảng bá hình ảnh Đà Nẵng năng động và hiện đại.</p>
+                        <a href="" class="btn btn-warning font-weight-bold py-2 px-4 mt-2">Tìm hiểu thêm</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Danh sach su kien -->
+        <div class="container-fluid  text-center" style="background-color:#FFF5EE">
+            <div class="container">
+                <div class="section-title">
+                    <h4 class="text-primary text-uppercase display-7 fw-bold pt-1" style="letter-spacing: 5px;">
+                        Danh Sách Sự Kiện Tại Đà Nẵng
+                    </h4>
+                </div>
+
+                <div class="row g-4" id="eventsContainer">
+                    <% events.forEach((event, index)=> { %>
+                        <div class="col-lg-6 event-item <%= index >= 4 ? 'd-none' : '' %>">
+                            <div class="card h-100 shadow-sm border-0">
+                                <div class="row g-0 h-100">
+                                    <!-- Hình ảnh -->
+                                    <div class="col-sm-5">
+                                        <img src="<%= event.cover_image %>" class="img-fluid rounded-start w-100"
+                                            alt="<%= event.name %>" style="height:200px; object-fit:cover;">
+                                    </div>
+
+                                    <!-- Nội dung -->
+                                    <div class="col-sm-7 d-flex flex-column">
+                                        <div class="card-body d-flex flex-column h-100">
+                                            <!-- Tên sự kiện -->
+                                            <h5 class="card-title mb-2 fw-bold">
+                                                <i class="fa fa-calendar me-2 text-primary"></i>
+                                                <%= event.name %>
+                                            </h5>
+
+                                            <!-- Thông tin chi tiết -->
+                                            <p class="text-muted small mb-2 ">
+                                                <span class="d-block text-danger fs-4">📍 <%= event.location %></span>
+                                                <span class="d-block fs-6  fw-bold">🕒 <%=
+                                                        event.start_time.toLocaleDateString("vi-VN") %> - <%=
+                                                            event.end_time.toLocaleDateString("vi-VN") %></span>
+                                            </p>
+
+                                            <!-- Mô tả ngắn -->
+                                            <p class="card-text flex-grow-1 text-truncate"
+                                                style="display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; overflow:hidden;">
+                                                <%= event.description %>
+                                            </p>
+
+                                            <!-- Nút tham gia -->
+                                            <div class="mt-auto">
+                                                <a href="/event/invite/<%= event._id %>"
+                                                    class="btn btn-info w-100 fw-semibold text-white">
+                                                    Xem chi tiết
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
+                        </div>
+                        <% }) %>
+                </div>
+
+
+                <!-- Nút xem thêm -->
+                <div class="text-center mt-4">
+                    <button id="showMoreBtn" class="btn btn-warning fw-bold px-4 py-2">
+                        Xem thêm
+                    </button>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- END Danh sach su kien -->
+
+        <!-- <footer></footer> -->
+        <div class="container-fluid footer text-white pt-5 px-0 position-relative overlay-top"
+            style="background-color: #5a3d2b;">
+            <div class="row mx-0 pt-5 px-sm-3 px-lg-5 mt-4">
+                <div class="col-lg-3 col-md-6 mb-5">
+                    <h4 class="text-white text-uppercase mb-4" style="letter-spacing: 3px;">Liên Hệ</h4>
+                    <p><i class="fa fa-map-marker-alt mr-2"></i>Cầu Rồng Đà Nẵng</p>
+                    <p><i class="fa fa-phone-alt mr-2"></i>+012 345 67890</p>
+                    <p class="m-0"><i class="fa fa-envelope mr-2"></i>phanthanhchien.com</p>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-5">
+                    <h4 class="text-white text-uppercase mb-4" style="letter-spacing: 3px;">Theo Dõi</h4>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatum adipisci perspiciatis
+                        corporis eveniet est omnis iusto dignissimos unde maiores nemo voluptate</p>
+                    <div class="d-flex justify-content-start">
+                        <a class="btn btn-lg btn-outline-light btn-lg-square mr-2" href="#"><i
+                                class="fab fa-twitter"></i></a>
+                        <a class="btn btn-lg btn-outline-light btn-lg-square mr-2" href="#"><i
+                                class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-lg btn-outline-light btn-lg-square mr-2" href="#"><i
+                                class="fab fa-linkedin-in"></i></a>
+                        <a class="btn btn-lg btn-outline-light btn-lg-square" href="#"><i
+                                class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-5">
+                    <h4 class="text-white text-uppercase mb-4" style="letter-spacing: 3px;">Thời gian sự kiện</h4>
+                    <div>
+                        <h6 class="text-white text-uppercase">Thứ 7 Hàng Tuần</h6>
+                        <p>6.00 PM - 11.00 PM</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-5">
+                    <h4 class="text-white text-uppercase mb-4" style="letter-spacing: 3px;">Bản Tin</h4>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    <div class="w-100">
+                        <div class="input-group">
+                            <input type="email" class="form-control border-light" style="padding: 25px;"
+                                placeholder="Your Email">
+                            <button class="btn btn-warning font-weight-bold px-4">Sign Up</button>
                         </div>
                     </div>
                 </div>
             </div>
+
         </div>
-        <% }) %>
-</div>
+
+        <!-- END <footer></footer> -->
 
 
-<!-- Nút xem thêm -->
-<div class="text-center mt-4">
-    <button id="showMoreBtn" class="btn btn-warning fw-bold px-4 py-2">
-        Xem thêm
-    </button>
-</div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
-    </div>
-</div>
-
-<!-- END Danh sach su kien -->
-
-    <!-- <footer></footer> -->
-<div class="container-fluid footer text-white pt-5 px-0 position-relative overlay-top"
-    style="background-color: #5a3d2b;">
-    <div class="row mx-0 pt-5 px-sm-3 px-lg-5 mt-4">
-        <div class="col-lg-3 col-md-6 mb-5">
-            <h4 class="text-white text-uppercase mb-4" style="letter-spacing: 3px;">Liên Hệ</h4>
-            <p><i class="fa fa-map-marker-alt mr-2"></i>Cầu Rồng Đà Nẵng</p>
-            <p><i class="fa fa-phone-alt mr-2"></i>+012 345 67890</p>
-            <p class="m-0"><i class="fa fa-envelope mr-2"></i>phanthanhchien.com</p>
-        </div>
-        <div class="col-lg-3 col-md-6 mb-5">
-            <h4 class="text-white text-uppercase mb-4" style="letter-spacing: 3px;">Theo Dõi</h4>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatum adipisci perspiciatis corporis eveniet est omnis iusto dignissimos unde maiores nemo voluptate</p>
-            <div class="d-flex justify-content-start">
-                <a class="btn btn-lg btn-outline-light btn-lg-square mr-2" href="#"><i class="fab fa-twitter"></i></a>
-                <a class="btn btn-lg btn-outline-light btn-lg-square mr-2" href="#"><i
-                        class="fab fa-facebook-f"></i></a>
-                <a class="btn btn-lg btn-outline-light btn-lg-square mr-2" href="#"><i
-                        class="fab fa-linkedin-in"></i></a>
-                <a class="btn btn-lg btn-outline-light btn-lg-square" href="#"><i class="fab fa-instagram"></i></a>
-            </div>
-        </div>
-        <div class="col-lg-3 col-md-6 mb-5">
-            <h4 class="text-white text-uppercase mb-4" style="letter-spacing: 3px;">Thời gian sự kiện</h4>
-            <div>
-                <h6 class="text-white text-uppercase">Thứ 7 Hàng Tuần</h6>
-                <p>6.00 PM  - 11.00 PM</p>  
-            </div>
-        </div>
-        <div class="col-lg-3 col-md-6 mb-5">
-            <h4 class="text-white text-uppercase mb-4" style="letter-spacing: 3px;">Bản Tin</h4>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-        <div class="w-100">
-            <div class="input-group">
-                <input type="email" class="form-control border-light" style="padding: 25px;" placeholder="Your Email">
-                <button class="btn btn-warning font-weight-bold px-4">Sign Up</button>
-            </div>
-        </div>
-        </div>
-    </div>
-
-</div>
-
-    <!-- END <footer></footer> -->
-  
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    
 
 </body>
 <script>

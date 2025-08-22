@@ -163,10 +163,13 @@ exports.loadInviteForm = async (req, res) => {
     try {
         const eventId = req.params.id;
         const event = await Event.findById(eventId);
+        const userid = req.session.user ? req.session.user.id : null;
+
+        const user = userid ? await User.findById(userid).lean() : null;
         if(!event) {
             return res.status(404).send("Sự kiện không tồn tại");
         }
-        res.render("dangkysukien", { event }); 
+        res.render("dangkysukien", { event,user }); 
     } catch (error) {
         console.error(error);
         res.status(500).send("Lỗi server");
