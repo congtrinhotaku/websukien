@@ -19,6 +19,9 @@ router.post(
   ]),
   eventController.createEvent
 );
+//chi tiet su kien
+router.get("/event/:id", eventController.getEventDetail);
+
 
 
 

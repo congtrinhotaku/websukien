@@ -40,3 +40,20 @@ exports.createEvent = async (req, res) => {
         res.status(500).send("Lỗi server");
     }
 };
+// Chi tiết sự kiện
+exports.getEventDetail = async (req, res) => {
+    try {
+        const eventId = req.params.id;
+        const event = await Event.findById(eventId);
+
+        if (!event) {
+            return res.status(404).send("Sự kiện không tồn tại");
+        }
+
+        // render ra view "EventDetail.ejs" và truyền dữ liệu
+        res.render("ChiTietSK", { event });
+    } catch (err) {
+        console.error("❌ Lỗi khi lấy sự kiện:", err.message);
+        res.status(500).send("Lỗi server");
+    }
+};
