@@ -21,7 +21,7 @@
 <div class="container-fluid p-0 nav-bar" id="navbar">
     <nav class="navbar navbar-expand-lg navbar-dark py-3 px-4">
         <!-- Logo -->
-        <a href="index.html" class="navbar-brand">
+        <a href="/" class="navbar-brand">
             <img src="https://danangfantasticity.com/wp-content/uploads/dfc/public/main-logo.png" alt=""
                 style="height:50px;">
         </a>
@@ -48,16 +48,16 @@
             <!-- Nút Đăng Nhập / Đăng Ký -->
             <div class="d-flex align-items-center">
                 <% if (user) { %>
-<a href="/users/createEvent" class="btn text-warning fw-bold me-2">Tạo mới sự kiện</a>
-<a href="/users/events" class="btn text-warning fw-bold me-3">Quản lý sự kiện</a>
+                    <a href="/users/createEvent" class="btn text-warning fw-bold me-2">Tạo mới sự kiện</a>
+                    <a href="/users/events" class="btn text-warning fw-bold me-3">Quản lý sự kiện</a>
 
 
-                    <!-- Dropdown tên user -->
-                    <div class="dropdown">
-<button class="btn text-warning fw-bold dropdown-toggle" type="button" id="userMenu" data-bs-toggle="dropdown"
-    aria-expanded="false">
-    <%= user.name %>
-</button>
+                                        <!-- Dropdown tên user -->
+                                        <div class="dropdown">
+                    <button class="btn text-warning fw-bold dropdown-toggle" type="button" id="userMenu" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        <%= user.name %>
+                    </button>
                         <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userMenu">
                             <li><a class="dropdown-item" href="/users/profile">Profile</a></li>
                             <li><a class="dropdown-item" href="/">Đăng Xuất</a></li>

@@ -53,15 +53,18 @@ exports.createEvent = async (req, res) => {
 // Chi tiết sự kiện
 exports.getEventDetail = async (req, res) => {
     try {
+        const userid = req.session.user ? req.session.user.id : null;
+        const user = userid ? await User.findById(userid).lean() : null;
         const eventId = req.params.id;
         const event = await Event.findById(eventId);
+        const participantsCount = await EventRegistration.countDocuments({ event_id: eventId });
 
         if (!event) {
             return res.status(404).send("Sự kiện không tồn tại");
         }
 
         // render ra view "EventDetail.ejs" và truyền dữ liệu
-        res.render("ChiTietSK", { event });
+        res.render("ChiTietSK", { event, user,participantsCount });
     } catch (err) {
         console.error("❌ Lỗi khi lấy sự kiện:", err.message);
         res.status(500).send("Lỗi server");

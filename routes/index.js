@@ -18,6 +18,9 @@ router.post("/register", userController.signup);
 router.get("/login", userController.loadLogin);
 router.post("/login", userController.login);
 
+//chi tiet su kien
+router.get("/event/:id", eventController.getEventDetail);
+
 // Hiển thị form đăng ký
 router.get("/event/invite/:id", eventController.loadInviteForm);
 
