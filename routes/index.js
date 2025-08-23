@@ -17,6 +17,7 @@ router.get("/register", userController.loadSignup);
 router.post("/register", userController.signup);
 router.get("/login", userController.loadLogin);
 router.post("/login", userController.login);
+router.get("/logout",trangchuController.logout);
 
 //chi tiet su kien
 router.get("/event/:id", eventController.getEventDetail);

@@ -23,7 +23,19 @@ const getHomePage = async (req, res) => {
         res.status(500).send("Có lỗi xảy ra khi tải trang chủ");
     }
 };
+const logout = (req, res) => {
+    req.session.destroy((err) => {
+        if (err) {
+            console.error("Lỗi khi đăng xuất:", err);
+            return res.redirect("/"); // nếu có lỗi thì về trang chủ
+        }
+        res.clearCookie("connect.sid"); // xóa cookie session
+        return res.redirect("/");  // ✅ về trang chủ sau khi logout
+    });
+};
+
 
 module.exports = {
-    getHomePage
+    getHomePage,
+    logout
 };
