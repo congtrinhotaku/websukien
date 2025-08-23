@@ -64,7 +64,7 @@ exports.getEventDetail = async (req, res) => {
         }
 
         // render ra view "EventDetail.ejs" và truyền dữ liệu
-        res.render("ChiTietSK", { event, user,participantsCount });
+        res.render("ChiTietSK", { event, user: user|| null,participantsCount });
     } catch (err) {
         console.error("❌ Lỗi khi lấy sự kiện:", err.message);
         res.status(500).send("Lỗi server");
