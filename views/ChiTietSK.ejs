@@ -52,26 +52,33 @@
                                         <strong>Địa điểm:</strong> <br>
                                         <%= event.location %>
                                     </li>
-                                    <li class="list-group-item">
-                                        <strong>Còn lại:</strong> <br>
-                                        <% 
-                                            const now = new Date();
-                                            const diff = new Date(event.start_time) - now;
-                                            let remain = "";
-                                            if (diff > 0) {
-                                                const days = Math.floor(diff / (1000*60*60*24));
-                                                const hours = Math.floor((diff % (1000*60*60*24)) / (1000*60*60));
-                                                remain = `${days} ngày ${hours} giờ`;
-                                            } else {
-                                                remain = "Đang diễn ra hoặc đã kết thúc";
-                                            }
-                                        %>
-                                        <%= remain %>
+                                    <li class="list-group-item bg-light border border-danger-subtle rounded shadow-sm">
+                                        <strong class="text-danger-emphasis">Còn lại:</strong> <br>
+                                        <span class="badge fs-3 text-center text-danger w-100 text-center">
+                                            <% 
+                                                const now = new Date();
+                                                const diff = new Date(event.start_time) - now;
+                                                let remain = "";
+                                                if (diff > 0) {
+                                                    const days = Math.floor(diff / (1000*60*60*24));
+                                                    const hours = Math.floor((diff % (1000*60*60*24)) / (1000*60*60));
+                                                    remain = `${days} ngày ${hours} giờ`;
+                                                } else {
+                                                    remain = "Đang diễn ra hoặc đã kết thúc";
+                                                }
+                                            %>
+                                            <%= remain %>
+                                        </span>
                                     </li>
-                                    <li class="list-group-item">
-                                        <strong>Người đăng ký:</strong> <br>
-                                        <%= participantsCount %> người
+                                    <li class="list-group-item mt-2 bg-light border border-primary rounded shadow-sm">
+                                        <strong class="text-primary">
+                                            Số người tham gia:
+                                        </strong> 
+                                        <span class="badge fs-3 text-center text-success w-100 text-center">
+                                            <%= participantsCount %> người
+                                        </span>
                                     </li>
+
                                 </ul>
                                 <div class="text-center mt-3">
                                     <a href="/event/invite/<%= event._id %>" 
